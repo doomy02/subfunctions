@@ -1,0 +1,105 @@
+#include<iostream>
+using namespace std;
+int sumcif(int x) //pb897
+{
+    int s=0;
+    while(x>0)
+    {
+        s+=x%10;
+        x=/10;
+    }
+    return s;
+}
+int prin(int x) //pb14
+{
+    if(x<2) return 0;
+    for(int i=2; i*i<=x; i++)
+        if(x%i==0) return 0;
+    return 1;
+}
+int cocat(int a,int b) //pb904
+{
+    int c=b,p=1;
+    while(c>0)
+    {
+        c/=10;
+        p*=10;
+    }
+    return a*p+b;
+}
+int nr_cif(int n, int k) //pb113
+{
+    int p=0;
+    while(n)
+    {
+        if(n%10!=0)
+            if(k%(n%10)==0) p++;
+        n/=10;
+    }
+    return p;
+}
+int cmmnr(int x) //pb25
+{
+    int v[10];
+    while(x)
+    {
+        n++;
+        v[n]=x%10;
+        x/=10;
+    }
+    for(i=1; i<n; i++)
+        for(j=i+1; j<=n; j++)
+            if(v[j]>v[i]) swap(v[j],v[i]);
+    for(i=1; i<=n; i++)
+        y=y*10+v[i];
+    return y;
+}
+int cifrak(int n,int k) //VBiii16
+{
+    int p=0;
+    while(n)
+    {
+        if(n%10==k) p++;
+        n/=10;
+    }
+    return p;
+}
+int dist(int a) //VBiii52
+{
+    int p=0, i=0;
+    while(a)
+    {
+        if(a%2==0) p++;
+        else i++;
+        a=/10;
+    }
+    if(p==0 || i==0) return 1;
+    else return 0;
+}
+int Palindrom(int n) //VBiii71
+{
+    int c=n, y=0;
+    while(c)
+    {
+        y=y*10+c%10;
+        c/=10;
+    }
+    if(n==y) return 1;
+    else return 0;
+}
+int cif(int a, int b) //VBiii3
+{
+    int c=a,k;
+    while(c)
+    {
+        if(c%10==b) k++;
+        c/=10;
+    }
+    return k;
+}
+int a,b;
+int main()
+{
+    cin>>a>>b;
+    cout<<cif(x);
+}
